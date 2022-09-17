@@ -1,8 +1,7 @@
-from flask import Flask
+from flask import Blueprint
 
-def create_app():
-    app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'asñldkfSOEWEKlaskñ2309234ñli092ka94a4'
+views = Blueprint('views', __name__)
 
-    return app
-
+@views.route('/')
+def home():
+    return "<h1>Test</h1>"
